@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="DreamScape_Interactive.LoginPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DreamScape_Interactive"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Width="360">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <TextBlock Grid.Row="0"
+                   Text="DreamScape Interactive"
+                   Style="{StaticResource TitleTextBlockStyle}"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,8"/>
+
+        <TextBlock Grid.Row="1"
+                   Text="Inloggen"
+                   Style="{StaticResource SubtitleTextBlockStyle}"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,24"/>
+
+        <!-- Username -->
+        <TextBox Grid.Row="2"
+                 x:Name="UsernameBox"
+                 PlaceholderText="Gebruikersnaam"
+                 Margin="0,0,0,12"
+                 KeyDown="InputBox_KeyDown"/>
+
+        <!-- Password -->
+        <PasswordBox Grid.Row="3"
+                     x:Name="PasswordBox"
+                     PlaceholderText="Wachtwoord"
+                     Margin="0,0,0,12"
+                     KeyDown="InputBox_KeyDown"/>
+
+        <!-- Error message -->
+        <TextBlock Grid.Row="4"
+                   x:Name="ErrorMessageText"
+                   Foreground="{ThemeResource SystemFillColorCriticalBrush}"
+                   TextWrapping="Wrap"
+                   Margin="0,0,0,12"
+                   Visibility="Collapsed"/>
+
+        <!-- Login button -->
+        <Button Grid.Row="5"
+                x:Name="LoginButton"
+                Content="Inloggen"
+                HorizontalAlignment="Stretch"
+                Style="{StaticResource AccentButtonStyle}"
+                Click="LoginButton_Click"/>
+    </Grid>
+</Page>
